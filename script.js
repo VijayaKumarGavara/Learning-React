@@ -1,48 +1,40 @@
 import React from "react";
-import ReactDOM from "react-dom/client"
-/**
- * <div id='parent'> 
- *      <div id='child1'>
- *          <h1>Vijay</h1>
- *          <h2>SDE</h2>
- *      </div>
- *      <div id='child2'>
- *          <h1>Yuvi</h1>
- *          <h2>SDE</h2>
- *      </div>
- * </div>
- * 
- * 
- * 
- * 
-*/
+import ReactDOM from "react-dom/client";
 
+// React Element
 
-// let content=React.createElement("div", {id:'parent'}, // <-- Creates a JS Object
-//     [
-//         React.createElement("div", {id:'child1'}, 
-//         [
-//             React.createElement("h1", {id:'n1'}, "Vijay"),
-//             React.createElement("h2", {id:'r1'}, "SDE")
-//         ]),
-//         React.createElement("div", {id:'child2'}, 
-//         [
-//             React.createElement("h1", {id:'n2'}, "Yuvi"),
-//             React.createElement("h2", {id:'r2'}, "SDE")
-//         ])
-//     ]
-// );
+// let heading=React.createElement("h1",{id:'heading'}, "Learning React JS");
+// React Element = JS Object => redered as a HTMl element.
+// let jsxHeading=<h1>Hello, I am Vijay</h1>;
+// jsx converted into React Element by using Babel as a Transpiler = JS Object => redered as a HTMl element.
+// console.log(heading, jsxHeading);
 
+// React Element
+const heading = (
+  <h1 id="heading" className="heading">
+    I am just a React Element. 
+  </h1>
+);
+// console.log(heading);
 
-// const h = document.createElement("h1");
-// h.innerText = "Hello World2";
-// document.getElementById("root").appendChild(h);
+const Greeting=()=><h2>Welcome to this World.</h2>
+// React Component
+const HeadingComponent=()=>{
+    return(
+        <div className="container"> 
+            {heading}
+            {Greeting()}
+            <Greeting/>
+            <Greeting></Greeting> 
+            <h1>Hey, I am a functional component</h1>
+        </div>
+    );
+};
 
-let h2 = React.createElement("h2", {id:'heading'}, "I am Learning React..!");
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// console.log(h2);
-// root.render(h2);
+// console.log(HeadingComponent());
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(h2);
-// root.render(content); // <-- Converts the JS Object into actual html element.
+let root = ReactDOM.createRoot(document.getElementById("root"));
+
+// root.render(heading); // <-- This is how we render React Elements
+
+root.render(<HeadingComponent/>) // <-- This is how we render React Components
