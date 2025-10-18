@@ -1,0 +1,30 @@
+{
+  "name": "learning---react",
+  "version": "1.0.0",
+  "description": "React Learning Journey",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VijayaKumarGavara/Learning-React.git"
+  },
+  "keywords": [
+    "react",
+    "java",
+    "script"
+  ],
+  "author": "Vijaya Kumar Gavara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VijayaKumarGavara/Learning-React/issues"
+  },
+  "homepage": "https://github.com/VijayaKumarGavara/Learning-React#readme",
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
