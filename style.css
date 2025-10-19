@@ -1,3 +1,65 @@
-#root{
-    color: cornflowerblue;
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height:70px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.logo-container{
+    height: 70px;
+    width: 100px;
+}
+.logo{
+    height: 100%;
+    object-fit: contain;
+}
+
+.navbar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar ul li{
+    padding:0px 30px;
+    list-style: none;
+    font-size: 20px;
+}
+
+.search{
+    padding: 15px;
+}
+
+.res-container{
+    display: flex;
+    padding: 0px 90px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:15px;
+}
+.res-card{
+    width: 200px;
+    height:350px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.res-card:hover{
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+.res-logo-container{
+    width: 180px;
+    height:100px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.res-logo{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
 }
