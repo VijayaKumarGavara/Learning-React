@@ -27,9 +27,7 @@
     font-size: 20px;
 }
 
-.search{
-    padding: 15px;
-}
+
 
 .res-container{
     display: flex;
@@ -62,4 +60,8 @@
     height: 100%;
 
     object-fit: cover;
+}
+
+.filter{
+    padding: 15px;
 }
