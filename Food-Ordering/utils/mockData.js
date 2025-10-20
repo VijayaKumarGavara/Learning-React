@@ -1,31 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://images-platform.99static.com//s_-2qgRrPZnWUpWIh4NeIu95UCE=/0x0:999x999/fit-in/500x500/99designs-contests-attachments/118/118612/attachment_118612943"
-          alt="app-logo"
-        />
-      </div>
-      <div className="navbar">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const resObj = {
+export const resObj = {
   image:
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNckxGSvE5XgenGda7gx3k8bE1Q9DDodpCQg&s",
   resName: "SVG Grand",
@@ -34,7 +7,7 @@ const resObj = {
   delevieryTime: 35,
 };
 
-const resList = [
+export const resList = [
   {
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNckxGSvE5XgenGda7gx3k8bE1Q9DDodpCQg&s",
@@ -172,53 +145,3 @@ const resList = [
     delevieryTime: 16,
   },
 ];
-
-const RestaurantCard = (props) => {
-  const { image, resName, cuisines, resRating, delevieryTime } = props.restaurant;
-  return (
-    <div className="res-card">
-      <div className="res-logo-container">
-        <img alt="res-logo" className="res-logo" src={image} />
-      </div>
-      <h3>{resName}</h3>
-      <h4>{cuisines.join(",")}</h4>
-      <h4>{resRating} stars</h4>
-      <h4>{delevieryTime} minutes</h4>
-    </div>
-  );
-};
-const Body = () => {
-  return (
-    <>
-      <div className="search">Search</div>
-      <div className="res-container">
-        {/* <RestaurantCard resName="Janata Food Court" cuisines="Fried Rice, Andhra, Indian" resRating="4.2 stars" delevieryTime="20 minutes"/>
-                <RestaurantCard resName="SVG Grand" cuisines="Biryani, Andhra" resRating="4.6 stars" delevieryTime="35 minutes"/>
-                 */}
-
-        {/* <RestaurantCard restaurant={resObj} /> */}
-
-        {/* <RestaurantCard restaurant={resList[0]}/>
-        <RestaurantCard restaurant={resList[1]}/>
-        <RestaurantCard restaurant={resList[2]}/>
-        <RestaurantCard restaurant={resList[3]}/>
-        <RestaurantCard restaurant={resList[4]}/> */}
-
-        {
-            resList.map((res, index)=>{
-                return <RestaurantCard  key={index} restaurant={res}/>
-            })
-        }
-      </div>
-    </>
-  );
-};
-const App = () => {
-  return (
-    <>
-      <Header />
-      <Body />
-    </>
-  );
-};
-root.render(<App />);
