@@ -51,6 +51,7 @@
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 }
 .res-logo-container{
     width: 180px;
@@ -78,6 +79,7 @@
 .filter-btn{
     padding: 5px;
     margin:10px;
+    cursor: pointer;
 }
 .search{
     display: flex;

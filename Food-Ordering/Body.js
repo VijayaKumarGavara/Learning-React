@@ -16,6 +16,7 @@ const Body = () => {
 
         setList(restaurants);
         setOriginalList(restaurants);
+        console.log(originalList);
       } catch (err) {
         console.error("Error fetching data:", err);
       }
@@ -57,7 +58,7 @@ const Body = () => {
           className="filter-btn"
           type="button"
           onClick={() => {
-            let filteredList = (list===originalList)?originalList:list.filter(
+            let filteredList = originalList.filter(
               (res) => res.info.avgRating > 4.3
             );
             setList(filteredList);
@@ -87,7 +88,7 @@ const Body = () => {
         <RestaurantCard restaurant={resList[2]}/>
         <RestaurantCard restaurant={resList[3]}/>
         <RestaurantCard restaurant={resList[4]}/> */}
-
+        {console.log(originalList)}
         {list.map((res) => {
           return <RestaurantCard key={res.info.id} restaurant={res} />;
         })}

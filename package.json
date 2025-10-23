@@ -4,7 +4,7 @@
   "description": "React Learning Journey",
   "scripts": {
     "start": "parcel index.html",
-    "build":"parcel build index.html",
+    "build": "parcel build index.html",
     "test": "test"
   },
   "repository": {
@@ -27,6 +27,8 @@
   },
   "dependencies": {
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-router": "^7.9.4",
+    "react-router-dom": "^7.9.4"
   }
 }
