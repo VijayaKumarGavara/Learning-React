@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Header";
 import Body from "./Body";
-import About from "./About";
+import AboutClass from "./AboutClass";
 import Contact from "./Contact";
 import ErrorPage from "./ErrorPage";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
@@ -23,7 +23,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/about",
-        element: <About />,
+        element: <AboutClass name="Vijay" role="SDE"/>,
       },
       {
         path: "/contact",
@@ -36,14 +36,7 @@ const appRouter = createBrowserRouter([
     ],
     errorElement: <ErrorPage />,
   },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
+  
 ]);
 
 document.title = "Food Ordering App";

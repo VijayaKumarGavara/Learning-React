@@ -8,7 +8,7 @@ export default function CourseCard(props){
             <div className="course-card">
                 <h2>{title}</h2>
                 <p>{description}</p>
-                <Link to={"/courses/"+id} state={{course:props.cd}}><button>View More</button></Link>
+                <Link to={"/courses/"+id} state={{course:props?.cd}}><button>View More</button></Link>
             </div>
         </>
     )

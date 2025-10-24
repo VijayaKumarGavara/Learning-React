@@ -16,7 +16,7 @@ const Body = () => {
 
         setList(restaurants);
         setOriginalList(restaurants);
-        console.log(originalList);
+        // console.log(originalList);
       } catch (err) {
         console.error("Error fetching data:", err);
       }
@@ -88,7 +88,7 @@ const Body = () => {
         <RestaurantCard restaurant={resList[2]}/>
         <RestaurantCard restaurant={resList[3]}/>
         <RestaurantCard restaurant={resList[4]}/> */}
-        {console.log(originalList)}
+        {/* {console.log(originalList)} */}
         {list.map((res) => {
           return <RestaurantCard key={res.info.id} restaurant={res} />;
         })}
