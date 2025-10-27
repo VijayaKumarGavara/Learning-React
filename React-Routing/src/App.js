@@ -1,3 +1,4 @@
+import {lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -5,13 +6,14 @@ import Footer from "./components/Footer";
 import ErrorPage from "./components/ErrorPage";
 
 import AboutClass from "./pages/AboutClass";
-import About from "./pages/About";
+// import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Courses from "./pages/Courses";
 import CourseDashBoard from "./pages/CourseDashBoard";
 import LessonDashBoard from "./pages/LessonDashBoard";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 
+const About = lazy(()=>import("./pages/About"));
 function App() {
   return (
     <>
@@ -40,7 +42,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About/>,
+        element: <Suspense><About/></Suspense>, // fallback={<h1>Data Fetched</h1>}
       },
       {
         path: "/contact",
