@@ -4,6 +4,7 @@ import Body from "./components/Body";
 import Footer from "./components/Footer";
 import ErrorPage from "./components/ErrorPage";
 
+import AboutClass from "./pages/AboutClass";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Courses from "./pages/Courses";
@@ -34,8 +35,12 @@ const appRouter = createBrowserRouter([
         Component:Body,
       },
       {
+        path: "/aboutclass",
+        element: <AboutClass/>,
+      },
+      {
         path: "/about",
-        element: <About />,
+        element: <About/>,
       },
       {
         path: "/contact",
