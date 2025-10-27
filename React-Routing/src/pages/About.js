@@ -1,25 +1,9 @@
-import { useState, useEffect } from "react";
+import useGetdata from "../../utils/useGetdata";
 import UserCard from "./UserCard";
 export default function About() {
-  const [users, setUsers] = useState(null);
 
-  useEffect(()=>{
-    fetchData();
-
-    // return(()=>{
-    //     console.log("Component Unmounted")
-    // })
-  },[])
-  async function fetchData() {
-    try {
-      const res = await fetch("https://dummyjson.com/users");
-      const data = await res.json();
-      // console.log(data);
-      setUsers(data?.users);
-    } catch (err) {
-      console.log(err.message);
-    }
-  }
+  const users=useGetdata();
+  
   if (users === null) {
     return (
       <>
