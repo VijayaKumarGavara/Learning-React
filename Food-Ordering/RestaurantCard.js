@@ -2,8 +2,8 @@ const RestaurantCard = (props) => {
   const {avgRating, cloudinaryImageId, costForTwo, cuisines, name} = props.restaurant.info;
   const {deliveryTime}=props.restaurant.info.sla;
   return (
-    <div className="res-card">
-      <div className="res-logo-container">
+    <div className="">
+      <div className="">
         <img alt="res-logo" className="res-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/"+cloudinaryImageId} />
       </div>
       <h4>{name}</h4>

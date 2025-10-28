@@ -5,14 +5,14 @@ const Header = () => {
   return (
     // div.
     <>
-      <div className="header-learn">
+      <div className='bg-blue-500'>
         <nav className='navbar'>
-          <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/about'>About</Link></li>
-            <li><Link to='/aboutclass'>About Class</Link></li>
-            <li><Link to='/contact'>Contact</Link></li>
-            <li><Link to='/courses'>Courses</Link></li>
+          <ul className="flex flex-row justify-around items-center h-15 ">
+            <li className='m-4 px-2 py-1  text-lg font-medium text-cyan-50 hover:bg-blue-700 hover:border-transparent-2 hover:rounded-lg'><Link to='/'>Home</Link></li>
+            <li className='m-4 px-2 py-1  text-lg font-medium text-cyan-50 hover:bg-blue-700 hover:border-transparent-2 hover:rounded-lg'><Link to='/about'>About</Link></li>
+            <li className='m-4 px-2 py-1  text-lg font-medium text-cyan-50 hover:bg-blue-700 hover:border-transparent-2 hover:rounded-lg'><Link to='/aboutclass'>About Class</Link></li>
+            <li className='m-4 px-2 py-1  text-lg font-medium text-cyan-50 hover:bg-blue-700 hover:border-transparent-2 hover:rounded-lg'><Link to='/contact'>Contact</Link></li>
+            <li className='m-4 px-2 py-1  text-lg font-medium text-cyan-50 hover:bg-blue-700 hover:border-transparent-2 hover:rounded-lg'><Link to='/courses'>Courses</Link></li>
           </ul>
         </nav>
       </div>

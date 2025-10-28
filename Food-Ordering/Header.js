@@ -4,22 +4,22 @@ import LOGO_URL from "./utils/constants";
 const Header = () => {
   const [status, setStatus]=useState('login');
   return (
-    <div className="header">
-      <div className="logo-container">
+    <div className="flex justify-between items-center">
+      <div className="w-48">
         <img
-          className="logo"
           src={LOGO_URL}
           alt="app-logo"
+          className="object-cover"
         />
       </div>
-      <div className="navbar">
-        <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/about'>About</Link></li>
-          <li><Link to='/contact'>Contact Us</Link></li>
-          <li>Cart</li>
+      <div>
+        <ul className="flex items-center text-2xl">
+          <li className="px-10"><Link to='/'>Home</Link></li>
+          <li className="px-10"><Link to='/about'>About</Link></li>
+          <li className="px-10"><Link to='/contact'>Contact Us</Link></li>
+          <li className="px-10">Cart</li>
           <button 
-            className="login-btn"
+            className="px-10"
             type="button"
             onClick={()=>{
               let s=status==='login'?'logout':'login';
