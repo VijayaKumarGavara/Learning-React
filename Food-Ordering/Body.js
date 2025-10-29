@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import SearchBar from "./SearchBar";
 const Body = () => {
   const [list, setList] = useState([]);
   const [originalList, setOriginalList] = useState([]);
+  const RestaurantPromoted = withPromotedLabel(RestaurantCard);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await fetch("http://localhost:5000/api/swiggy");
         const data = await res.json();
         const restaurants =
-          data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants || [];
 
         setList(restaurants);
@@ -52,10 +53,10 @@ const Body = () => {
   }
   return (
     <>
-      <div className="filter">
+      <div className="mx-48 flex flex-row flex-wrap">
         <SearchBar onSearch={handleSearch} />
         <button
-          className="filter-btn"
+          className="bg-blue-500 px-4 py-1 m-4 border-transparent rounded-lg hover:cursor-pointer"
           type="button"
           onClick={() => {
             let filteredList = originalList.filter(
@@ -67,7 +68,7 @@ const Body = () => {
           Top Rated Restaurants
         </button>
         <button
-          className="filter-btn"
+          className="bg-orange-400 px-4 py-1 m-4 border-transparent rounded-lg hover:cursor-pointer"
           type="button"
           onClick={() => {
             setList(originalList);
@@ -76,7 +77,7 @@ const Body = () => {
           Show All Restaurants
         </button>
       </div>
-      <div className="res-container">
+      <div className="flex fle-row flex-wrap justify-center m-4 items-center gap-10">
         {/* <RestaurantCard resName="Janata Food Court" cuisines="Fried Rice, Andhra, Indian" resRating="4.2 stars" delevieryTime="20 minutes"/>
                 <RestaurantCard resName="SVG Grand" cuisines="Biryani, Andhra" resRating="4.6 stars" delevieryTime="35 minutes"/>
                  */}
@@ -90,7 +91,11 @@ const Body = () => {
         <RestaurantCard restaurant={resList[4]}/> */}
         {/* {console.log(originalList)} */}
         {list.map((res) => {
-          return <RestaurantCard key={res.info.id} restaurant={res} />;
+          if (res.info.avgRating >= 4.3) {
+            return <RestaurantPromoted key={res.info.id} restaurant={res}/>
+          } else {
+            return <RestaurantCard key={res.info.id} restaurant={res} />;
+          }
         })}
       </div>
     </>

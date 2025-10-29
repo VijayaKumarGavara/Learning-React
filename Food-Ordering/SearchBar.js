@@ -7,11 +7,12 @@ export default function SearchBar(props) {
       <div className="search">
         <input
           type="text"
-          className="search-bar"
+          className="border-2 rounded-lg py-1 px-4 focus:border-red-400"
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
         />
         <button 
+        className="bg-emerald-400 px-4 py-1 m-4 border-transparent rounded-lg hover:cursor-pointer"
         type="search-btn" 
         onClick={() => props.onSearch(searchText)}
             >
