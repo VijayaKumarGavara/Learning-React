@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import UserContext from "../../utils/userContext";
+
 export default function ProductCard(props) {
+  const {userName}=useContext(UserContext);
   const { product } = props;
   return (
     <>
@@ -14,6 +18,7 @@ export default function ProductCard(props) {
         <h4>{product.category}</h4>
         <h5>{product.brand}</h5>
         <p>{product.tags.join(",")}</p>
+        <p>{userName}</p>
       </div>
     </>
   );

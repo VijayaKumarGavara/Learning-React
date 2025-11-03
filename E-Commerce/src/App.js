@@ -1,5 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import { useContext, useEffect, useState } from "react";
+import UserContext from "../utils/userContext";
 
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,11 +10,21 @@ import Footer from "./components/Footer";
 import ErrorPage from "./components/ErrorPage";
 import ProductInfo from "./components/ProductInfo";
 function App() {
+
+  const [name, setName]=useState('default');
+
+  useEffect(()=>{
+    const data={username:'Vijaya Kumar Gavara'}
+    setName(data.username);
+  },[])
+
   return (
     <>
+      <UserContext.Provider value={{userName:name, setName}}>
       <Header />
       <Outlet />
       <Footer />
+      </UserContext.Provider>
     </>
   );
 }

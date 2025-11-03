@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router";
+import UserContext from "../../utils/userContext";
+
+
 const Header = () => {
+
+  const {userName}=useContext(UserContext);
   return (
     // div.
     <>
@@ -12,6 +17,9 @@ const Header = () => {
             </li>
             <li className="m-4 px-2 py-1  text-lg font-medium text-cyan-50 hover:bg-blue-700 hover:border-transparent-2 hover:rounded-lg">
               <Link to="/contact">Contact</Link>
+            </li>
+            <li className="m-4 px-2 py-1  text-lg font-medium text-cyan-50 hover:bg-blue-700 hover:border-transparent-2 hover:rounded-lg">
+              <Link to="/profile">{userName}</Link>
             </li>
           </ul>
         </nav>
