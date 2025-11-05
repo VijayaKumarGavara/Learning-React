@@ -11,8 +11,10 @@ import RestaurantInfo from "./RestaurantInfo";
 const App = () => {
   return (
     <>
-      <Header />
-      <Outlet />
+      
+        <Header />
+        <Outlet />
+      
     </>
   );
 };
