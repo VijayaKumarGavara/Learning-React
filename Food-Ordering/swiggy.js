@@ -24,24 +24,23 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/about",
-        element: <AboutClass name="Vijay" role="SDE"/>,
+        element: <AboutClass name="Vijay" role="SDE" />,
       },
       {
         path: "/contact",
         element: <Contact />,
       },
       {
-        path:'/',
-        element:<Body/>,
+        path: "/",
+        element: <Body />,
       },
       {
-        path:'/restaurants/:restaurantId',
-        Component:RestaurantInfo,
-      }
+        path: "/restaurants/:restaurantId",
+        Component: RestaurantInfo,
+      },
     ],
     errorElement: <ErrorPage />,
   },
-  
 ]);
 
 document.title = "Food Ordering App";
